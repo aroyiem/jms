@@ -10,7 +10,6 @@ import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
-import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.Message;
 import java.util.UUID;
@@ -32,8 +31,8 @@ public class HelloMessageListener {
 
     @JmsListener(destination = JmsConfig.MY_SEND_RCV_QUEUE)
     public void listenForHello(@Payload HelloWorldMessage helloWorldMessage,
-                       @Headers MessageHeaders headers,
-                       Message message) throws JMSException {
+                               @Headers MessageHeaders headers,
+                               Message message, org.springframework.messaging.Message springMessage) throws JMSException {
         //System.out.println("I got a message!!!!");
 
         //System.out.println(helloWorldMessage);

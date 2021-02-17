@@ -6,13 +6,11 @@ import com.roy.jms.config.JmsConfig;
 import com.roy.jms.model.HelloWorldMessage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jms.core.JmsTemplate;
-import org.springframework.jms.core.MessageCreator;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
-import javax.jms.Session;
 import java.util.UUID;
 
 @Component
